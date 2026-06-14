@@ -6,5 +6,5 @@ export default function Home() {
         Los geht's
       </button>
     </main>
-  );
+  )
 }
