@@ -53,3 +53,42 @@ export function saveWochenStats(stats: WochenStats): void {
   const toStore = { ...stats, tage: Array.from(stats.tage) }
   localStorage.setItem(WOCHEN_STATS_KEY, JSON.stringify(toStore))
 }
+
+export function seedLektionen(): void {
+  if (getLektionen().length > 0) return
+  saveLektionen([
+    {
+      id: 'lektion-1',
+      name: 'Zahlen',
+      vokabeln: [
+        { id: 'v-1-1', deutsch: 'eins', italienisch: 'uno', leitnerStufe: 1, letzteAbfrage: null },
+        { id: 'v-1-2', deutsch: 'zwei', italienisch: 'due', leitnerStufe: 1, letzteAbfrage: null },
+        { id: 'v-1-3', deutsch: 'drei', italienisch: 'tre', leitnerStufe: 1, letzteAbfrage: null },
+        { id: 'v-1-4', deutsch: 'vier', italienisch: 'quattro', leitnerStufe: 1, letzteAbfrage: null },
+        { id: 'v-1-5', deutsch: 'fünf', italienisch: 'cinque', leitnerStufe: 1, letzteAbfrage: null },
+      ],
+    },
+    {
+      id: 'lektion-2',
+      name: 'Farben',
+      vokabeln: [
+        { id: 'v-2-1', deutsch: 'rot', italienisch: 'rosso', leitnerStufe: 1, letzteAbfrage: null },
+        { id: 'v-2-2', deutsch: 'blau', italienisch: 'blu', leitnerStufe: 1, letzteAbfrage: null },
+        { id: 'v-2-3', deutsch: 'grün', italienisch: 'verde', leitnerStufe: 1, letzteAbfrage: null },
+        { id: 'v-2-4', deutsch: 'gelb', italienisch: 'giallo', leitnerStufe: 1, letzteAbfrage: null },
+        { id: 'v-2-5', deutsch: 'weiß', italienisch: 'bianco', leitnerStufe: 1, letzteAbfrage: null },
+      ],
+    },
+    {
+      id: 'lektion-3',
+      name: 'Familie',
+      vokabeln: [
+        { id: 'v-3-1', deutsch: 'Mutter', italienisch: 'madre', leitnerStufe: 1, letzteAbfrage: null },
+        { id: 'v-3-2', deutsch: 'Vater', italienisch: 'padre', leitnerStufe: 1, letzteAbfrage: null },
+        { id: 'v-3-3', deutsch: 'Bruder', italienisch: 'fratello', leitnerStufe: 1, letzteAbfrage: null },
+        { id: 'v-3-4', deutsch: 'Schwester', italienisch: 'sorella', leitnerStufe: 1, letzteAbfrage: null },
+        { id: 'v-3-5', deutsch: 'Sohn', italienisch: 'figlio', leitnerStufe: 1, letzteAbfrage: null },
+      ],
+    },
+  ])
+}
