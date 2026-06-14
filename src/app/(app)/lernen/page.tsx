@@ -8,7 +8,7 @@ import { getLektionen, seedLektionen, type Lektion } from '@/lib/store'
 function Checkbox({ checked }: { checked: boolean }) {
   return (
     <span
-      className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md ${
+      className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-xs ${
         checked ? 'bg-primary' : 'border border-border bg-surface-muted'
       }`}
     >
@@ -53,8 +53,8 @@ export default function LernenPage() {
 
   return (
     <main className="flex min-h-screen flex-col bg-background">
-      <div className="flex items-center gap-4 px-6 pt-12 pb-4">
-        <Link href="/" aria-label="Zurück" className="flex min-h-[44px] min-w-[44px] items-center justify-center -ml-3">
+      <div className="flex items-center gap-3 px-6 pt-12 pb-4">
+        <Link href="/" aria-label="Zurück" className="flex h-5 w-5 shrink-0 items-center justify-center">
           <IconArrowLeft size={20} className="text-muted-foreground" />
         </Link>
         <h1 className="text-title font-bold text-foreground">Was möchtest du lernen?</h1>
@@ -63,7 +63,7 @@ export default function LernenPage() {
       <div className="flex-1 overflow-y-auto">
         <button
           onClick={handleAlleToggle}
-          className="flex w-full items-center gap-4 px-6 py-3"
+          className="flex w-full items-center gap-3 px-6 py-3"
         >
           <Checkbox checked={selectedAll} />
           <div className="text-left">
@@ -78,7 +78,7 @@ export default function LernenPage() {
           <button
             key={lektion.id}
             onClick={() => handleLektionToggle(lektion.id)}
-            className="flex w-full items-center gap-4 px-6 py-3"
+            className="flex w-full items-center gap-3 px-6 py-3"
           >
             <Checkbox checked={!selectedAll && selectedIds.has(lektion.id)} />
             <div className="text-left">
